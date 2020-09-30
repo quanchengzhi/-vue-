@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script type="text/javascript"
+    src="https://webapi.amap.com/maps?v=1.4.15&key=68034e8a8aad2873b85026e9d51315a2&plugin=AMap.CitySearch">
+  </script>
+<script type="text/javascript">
+  //获取用户所在城市信息
+  function showCityInfo() {
+      localCity = decodeURIComponent(window.location.search.substr(1)).replace(/[^\u4e00-\u9fa5|]+/, '')
+      //实例化城市查询类
+      var citysearch = new AMap.CitySearch();
+      //自动获取用户IP，返回当前城市
+      citysearch.getLocalCity(function (status, result) {
+          if (status === 'complete' && result.info === 'OK') {
+              if (result && result.city && result.bounds) {
+                  var cityinfo = result.city;
+                  var citybounds = result.bounds;
+                  this.locakCity = localCity;
+                  //地图显示当前城市
+                  // map.setBounds(citybounds);
+              }
+          }
+      });
+  }
+  showCityInfo();
+</script>
+</body>
+
+</html>

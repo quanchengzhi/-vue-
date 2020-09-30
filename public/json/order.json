@@ -1,0 +1,58 @@
+[
+    {
+        "type": "待支付",
+        "btnText": "去支付",
+        "classType": 0,
+        "orderType": 0,
+        "href": "pay",
+        "vif": true
+    },
+    {
+        "type": "待消费",
+        "btnText": "查看券码",
+        "classType": 1,
+        "orderType": 1,
+        "href": "viewCode",
+        "vif": true
+    },
+    {
+        "type": "待评价",
+        "btnText": "去评价",
+        "classType": 1,
+        "orderType": 2,
+        "href": "comment",
+        "vif": true
+    },
+    {
+        "type": "已完成",
+        "btnText": "再来一单",
+        "classType": 1,
+        "orderType": 3,
+        "href": "pay",
+        "vif": true
+    },
+    {
+        "type": "已取消",
+        "btnText": "",
+        "classType": 2,
+        "orderType": 4,
+        "href": "",
+        "vif": false
+    },
+    {
+        "type": "退款中",
+        "btnText": "",
+        "classType": 2,
+        "orderType": 5,
+        "href": "",
+        "vif": false
+    },
+    {
+        "type": "已退款",
+        "btnText": "",
+        "classType": 2,
+        "orderType": 6,
+        "href": "",
+        "vif": false
+    }
+]
